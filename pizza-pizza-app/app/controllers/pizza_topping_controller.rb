@@ -1,0 +1,2 @@
+class PizzaToppingController < ApplicationController
+end
