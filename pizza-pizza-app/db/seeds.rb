@@ -1,7 +1,33 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
+# Topping.create(name: '')
+
+toppings_list = [
+"Pepperoni",
+"Mushrooms",
+"Onions",
+"Sausage",
+"Bacon",
+"Extra Cheese",
+"Olives",
+"Peppers",
+"Pineapple",
+"Spinach",
+"Bacon",
+"Garlic",
+"Basil",
+"Ham",
+"Chicken",
+"Beef",
+"Artichoke",
+"Anchovy",
+"Arugula",
+"Shrimp",
+"Broccoli",
+"Eggplant",
+"Pineapple",
+"Pine Nuts",
+"Cauliflower"
+]
+
+toppings_list.each do |name|
+  Topping.create( name: name )
+end
