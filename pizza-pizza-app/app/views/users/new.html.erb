@@ -1,0 +1,13 @@
+<h1>Registration</h1>
+
+<% if flash[:errors] %>
+  <ul>
+    <% flash[:errors].each do |err_message| %>
+      <li>
+        <%= err_message %>
+      </li>
+    <% end %>
+  </ul>
+<% end %>
+
+<%= render 'form' %>
