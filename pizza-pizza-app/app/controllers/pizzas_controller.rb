@@ -1,2 +1,23 @@
 class PizzasController < ApplicationController
+
+	def new
+		
+		# get a template for a pizzatopping
+		# get all the toppings
+		@pizzatopping = PizzaTopping.new
+		@toppings = Topping.all
+		# show all the toppings in the view and the form for a pizzatopping
+	end
+
+	def create
+		@pizza = Pizza.create(session[:user_id])
+		# loop through otopings creat pizzatoppoing
+		redirect_to new_pizzas_topping_path
+	end
+
+	private
+
+	def pizza_params
+		require(:pizza).permit(:topping_id => [])
+	end
 end
