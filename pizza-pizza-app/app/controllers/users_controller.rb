@@ -1,38 +1,49 @@
 class UsersController < ApplicationController
-  before_action :find_user, only: [:show, :create, :update, :delete]
 
   def show
-
+    @user = User.find(params[:id])
+    @pizzas = @user.pizzas
   end
 
   def new
-
+    @user = User.new
   end
 
   def create
-
+    @user = User.create(user_params)
+    if @user.valid?
+      session[:user_id] = @user.id
+      redirect_to @user
+    else
+      flash[:errors] = @user.errors.full_messages
+      redirect_to new_user_path
+    end
   end
 
   def edit
-
+    @user = User.find(params[:id])
   end
 
   def update
-
+    @user = User.find(params[:id])
+    if @user.update(user_params)
+      redirect_to @user
+    else
+      flash[:errors] = @user.errors.full_messages
+      redirect_to edit_user_path
+    end
   end
 
-  def delete
-
+  def destroy
+    @user = User.find(params[:id])
+    @user.destroy
+    redirect_to '/'
   end
 
   private
 
-  def find_user
-    @user = User.find(params[:id])
-  end
-
   def user_params
-    params.require(:user).permit(:first_name, :username, :password, :address)
+    params.require(:user).permit(:first_name, :username, :address, :password)
   end
 
 end
