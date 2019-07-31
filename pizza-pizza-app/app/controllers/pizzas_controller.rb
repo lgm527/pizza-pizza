@@ -1,5 +1,4 @@
 class PizzasController < ApplicationController
-
 	def new
 		
 		# get a template for a pizzatopping
