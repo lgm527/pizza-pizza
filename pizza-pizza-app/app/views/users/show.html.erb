@@ -1,0 +1,20 @@
+<h1><%= @user.first_name %>'s Pizzas!</h1>
+
+<%= link_to "Edit", edit_user_path %>
+
+<h4>Address:</h4>
+<p><%= @user.address %></p>
+
+  <h4>Pizzas!</h4>
+  <ul>
+    <% @pizzas.each do |p| %>
+    <li>
+      Pizza #<%= p.id %>
+        <% p.toppings.each do |topping| %>
+        <ol>
+          <%= topping.name %>
+        </ol>
+        <% end %>
+    </li>
+    <% end %>
+  </ul>
