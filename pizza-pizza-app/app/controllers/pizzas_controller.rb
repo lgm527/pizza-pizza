@@ -1,6 +1,6 @@
 class PizzasController < ApplicationController
 	def new
-		
+
 		# get a template for a pizzatopping
 		# get all the toppings
 		@pizzatopping = PizzaTopping.new
@@ -12,7 +12,7 @@ class PizzasController < ApplicationController
 
 		@pizza = Pizza.find(params[:id])
 		@pizzas_toppings = @pizza.toppings
-		byebug
+
 	end
 
 	private

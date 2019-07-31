@@ -16,7 +16,3 @@ class PizzaToppingsController < ApplicationController
 		params.require(:pizza_topping).permit(:topping_id => [])
 	end
 end
-
-pizza_topping_params[:topping_id][1...num_toppings].each do |t_id|
-			puts t_id
-		end
