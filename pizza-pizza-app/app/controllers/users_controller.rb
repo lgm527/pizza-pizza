@@ -1,10 +1,5 @@
 class UsersController < ApplicationController
-
-  def show
-    @user = User.find(params[:id])
-    @pizzas = @user.pizzas
-  end
-
+  
   def new
     @user = User.new
   end
@@ -38,6 +33,11 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
     @user.destroy
     redirect_to '/'
+  end
+
+  def show
+    @user = User.find(params[:id])
+    @pizzas = @user.pizzas
   end
 
   private
