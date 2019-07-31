@@ -1,5 +1,5 @@
 class Pizza < ApplicationRecord
   belongs_to :user
-  has_many :pizzas_toppings
-  has_many :toppings, through: :pizzas_toppings
+  has_many :pizza_toppings
+  has_many :toppings, through: :pizza_toppings
 end

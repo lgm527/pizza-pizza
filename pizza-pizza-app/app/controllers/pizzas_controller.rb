@@ -9,10 +9,11 @@ class PizzasController < ApplicationController
 		# show all the toppings in the view and the form for a pizzatopping
 	end
 
-	def create
-		@pizza = Pizza.create(session[:user_id])
-		# loop through otopings creat pizzatoppoing
-		redirect_to new_pizzas_topping_path
+	def show
+
+		@pizza = Pizza.find(params[:id])
+		@pizzas_toppings = @pizza.toppings
+		byebug
 	end
 
 	private
