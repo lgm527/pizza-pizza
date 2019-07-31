@@ -6,8 +6,10 @@ class LoginController < ApplicationController
 
   def create
     @user = User.find_by(username: params[:username])
+    byebug
     if @user && @user.authenticate(params[:password])
-      flash["message"] = "Successfully logged in #{@user.name}!"
+      flash["message"] = "Successfully logged in #{@user.first_name}!"
+      session[:user_id] = @user.id
       redirect_to @user
     else
       flash["message"] = "Incorrect Username or Password"

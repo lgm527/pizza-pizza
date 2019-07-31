@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
-  
+  before_action :authorized, only: [:show, :edit, :destroy]
+
   def new
     @user = User.new
   end

@@ -12,6 +12,7 @@
   <header>
       <% if @logged_in %>
       <p> Logged in As: <%= @current_user.username %> </p>
+      <%= button_to "Cook Pizza", new_pizza_path %>
       <%= button_to "Logout", "/logout", method: :delete %>
 
     <% else %>

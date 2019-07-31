@@ -29,6 +29,15 @@ ActiveRecord::Schema.define(version: 2019_07_31_142747) do
     t.index ["user_id"], name: "index_pizzas_on_user_id"
   end
 
+  create_table "pizzas_toppings", force: :cascade do |t|
+    t.integer "pizza_id"
+    t.integer "topping_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["pizza_id"], name: "index_pizzas_toppings_on_pizza_id"
+    t.index ["topping_id"], name: "index_pizzas_toppings_on_topping_id"
+  end
+
   create_table "toppings", force: :cascade do |t|
     t.string "name"
     t.datetime "created_at", null: false
