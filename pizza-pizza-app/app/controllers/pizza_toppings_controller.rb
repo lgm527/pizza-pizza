@@ -2,7 +2,7 @@ class PizzaToppingsController < ApplicationController
 
 	def create
 		@pizza = Pizza.create(user_id: session[:user_id], order_number: 1)
-		# loop through otopings creat pizzatoppoing
+		# loop through toppings creat pizzatoppoing
 		num_toppings = pizza_topping_params[:topping_id].length
 		pizza_topping_params[:topping_id][1...num_toppings].each do |t_id|
 			PizzaTopping.create(pizza: @pizza, topping_id: t_id)
@@ -13,8 +13,12 @@ class PizzaToppingsController < ApplicationController
 	def update
 		@pizza = Pizza.find(pizza_topping_params[:pizza_id])
 		num_toppings = pizza_topping_params[:topping_id].length
+
+		# get the toppings user has selected and the toppings already on the pizza
 		selected_toppings = pizza_topping_params[:topping_id]
 		current_toppings = @pizza.toppings.pluck(:id)
+		
+		# check if a topping on current pizza has been deselected
 		current_toppings.each do |ct|
 			if !selected_toppings.include?(ct.to_s)
 				PizzaTopping.where(topping_id: ct, pizza: @pizza)[0].destroy

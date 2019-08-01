@@ -21,8 +21,10 @@ class PizzasController < ApplicationController
 	end
 
 	def destroy
+		@user = User.find(session[:user_id])
 		@pizza = Pizza.find(params[:id])
 		@pizza.destroy
+		redirect_to user_path(@user)
 	end
 
 	private
