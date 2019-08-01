@@ -1,11 +1,12 @@
 <h1>Pizza show page</h1>
-<ul>
-	
-	<% @pizzas_toppings.each do |topping| %>
-		<li><%= topping.name %></li>
-	<% end %>
-	<% if @pizzas_toppings.length > 0 %>
-		<%= link_to "Edit this pizza", edit_pizza_path(@pizza) %>
-	<% end %>
-	<%= button_to "Delete this pizza", pizza_path(@pizza), method: :delete %>
+<div id="pizza_form">
+	<ul>
+		<% @pizzas_toppings.each do |topping| %>
+			<li><%= topping.name %></li>
+		<% end %>
+		<% if @pizzas_toppings.length > 0 %>
+			<%= link_to "Edit this pizza", edit_pizza_path(@pizza) %>
+		<% end %>
+		<%= button_to "Delete this pizza", pizza_path(@pizza), method: :delete %>
 </ul>
+</div>

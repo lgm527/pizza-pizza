@@ -9,6 +9,11 @@ font-family: 'Faster One', cursive;
    font-size: 4em;
  }
 
+ h2 {
+  font-family: 'Grand Hotel', cursive;
+  font-size: 2em;
+ }
+
 nav {
   display: flex;
   align-items: center;
@@ -33,6 +38,23 @@ input {
 
 ul {
   list-style-type: circle;
+}
+
+.topping_check {
+  display: none;
+}
+
+.topping_name {
+    background-color: #fbfbfb;
+    padding: 10px;
+    display: block;
+    border-radius: 10px;
+    box-shadow: 1px 2px 4px -2px;
+    margin-bottom: 1px;
+}
+
+input[type=checkbox]:checked + .topping_name {
+   background: #dedada;
 }
 
 #user_form, #login {
