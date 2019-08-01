@@ -16,7 +16,8 @@ class ApplicationController < ActionController::Base
   end
 
   def logout
-    session[:user_id] = nil
+    session.clear
+    # session[:user_id] = nil
   end
 
   def home

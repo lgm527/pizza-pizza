@@ -8,6 +8,6 @@
 	  	<%= check_box_tag name = "pizza_topping[topping_id][]", value = t.id , checked = @pizzas_toppings.include?(t.id), class: "topping_check", id: "pizza_topping_topping_id_#{t.id}"%>
 	  	<label for="pizza_topping_topping_id_<%= t.id %>" class="topping_name"><%= t.name %></label>
   <% end %>
-  <%= submit_tag("Change Toppings") %>
+  <%= submit_tag("Cook It! I'm Hungry dude.") %>
 <% end %>
 </div>
