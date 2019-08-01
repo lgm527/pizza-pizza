@@ -1,21 +1,24 @@
-<h1><%= @user.first_name %>'s Pizzas!</h1>
+<div id="user_show">
 
-<%= link_to "Edit", edit_user_path %>
+  <div id="user_info">
+    <h1><%= @user.first_name %>'s Pizzas!</h1>
+    <p>Address: <%= @user.address %></p>
+  </div>
 
-<h4>Address:</h4>
-<p><%= @user.address %></p>
+  <div id="user_pizzas">
 
-  <h4>Pizzas!</h4>
+  <h1>Pizzas!</h1>
   <ul>
     <% @pizzas.each do |p| %>
     <li>
-      Pizza #<%= p.id %>
+      Pizza #<%= p.id %> with...
         <% p.toppings.each do |topping| %>
-        <ol>
+          <br>
           <%= topping.name %>
-        </ol>
         <% end %>
     </li>
     <% end %>
   </ul>
-  <p><%= link_to "Create a Pizza", new_pizza_path %></p>
+  </div>
+
+</div>
