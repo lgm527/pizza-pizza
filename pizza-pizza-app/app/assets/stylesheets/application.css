@@ -78,6 +78,7 @@ ul {
 
 .go_home {
   text-align: right;
+  padding-top: .5em;
 }
 
 #errors {
