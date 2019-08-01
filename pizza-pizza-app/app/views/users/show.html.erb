@@ -11,7 +11,7 @@
   <ul>
     <% @pizzas.each do |p| %>
     <li>
-      Pizza #<%= p.id %> with...
+      <%= link_to "Pizza ##{p.id}", pizza_path(p) %> with...
         <% p.toppings.each do |topping| %>
           <br>
           <%= topping.name %>
