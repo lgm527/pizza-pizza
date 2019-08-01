@@ -7,5 +7,5 @@
   	<label for="pizzas_topping[topping_id][<%= t.id %>]"><%= t.name %></label>
   	<%= check_box_tag name = "pizza_topping[topping_id][]", value = t.id , checked = @pizzas_toppings.include?(t.id) %>
   <% end %>
-  <%= submit_tag("Search") %>
+  <%= submit_tag("Cook It! I'm Hungry dude.") %>
 <% end %>
