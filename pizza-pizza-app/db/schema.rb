@@ -44,7 +44,13 @@ ActiveRecord::Schema.define(version: 2019_07_31_142747) do
     t.datetime "updated_at", null: false
   end
 
-# Could not dump table "users" because of following StandardError
-#   Unknown type '' for column 'password_digest'
+  create_table "users", force: :cascade do |t|
+    t.string "first_name"
+    t.string "username"
+    t.string "address"
+    t.string "password_digest"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
 end
