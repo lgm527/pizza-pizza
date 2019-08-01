@@ -19,4 +19,8 @@ class ApplicationController < ActionController::Base
     session[:user_id] = nil
   end
 
+  def home
+    
+  end
+
 end

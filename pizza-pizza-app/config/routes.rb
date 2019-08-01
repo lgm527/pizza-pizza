@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
 
-  root '/'
+  root to: 'application#home'
 
   resources :toppings
   resources :pizzas

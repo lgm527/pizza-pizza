@@ -20,7 +20,8 @@
       <span> <%= link_to "Edit Profile", edit_user_path(@current_user) %> </span>
       <span> <%= link_to "Cook Pizza", new_pizza_path  %> </span>
       <span> <%= button_to "Logout", "/logout", method: :delete %> </span>
-      <span> <%= link_to image_tag("pizza-svgrepo-com.svg", border: 0), {action: '/', controller: 'application'} %> </span>
+
+      <span> <%= link_to image_tag("pizza_pie.png", height: '40', width: '40'), root_path %> </span>
 
     <% else %>
 
