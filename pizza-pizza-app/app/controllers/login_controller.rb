@@ -1,4 +1,5 @@
 class LoginController < ApplicationController
+  skip_before_action :setup_auth_variables
 
   def new
 

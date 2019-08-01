@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
   before_action :authorized, only: [:show, :edit, :destroy]
+  skip_before_action :setup_auth_variables, only: [:new, :create]
 
   def new
     @user = User.new

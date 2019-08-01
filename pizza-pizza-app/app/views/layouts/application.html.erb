@@ -18,10 +18,11 @@
 
       <% if @logged_in %>
 
-      <span> <p> Logged in As: <%= @current_user.username %> </p> </span>
+      <span> Logged in: <%= @current_user.username %> </span>
       <span> <%= link_to "View Profile", @current_user  %> </span>
       <span> <%= link_to "Edit Profile", edit_user_path(@current_user) %> </span>
-      <span> <%= link_to "Cook Pizza", new_pizza_path  %> </span>
+      <span> <%= button_to "Delete Profile", @user, method: :delete %> </span>
+      <span> <%= link_to "Cook Pizza", new_pizza_path %> </span>
       <span> <%= button_to "Logout", "/logout", method: :delete %> </span>
 
     <% else %>
