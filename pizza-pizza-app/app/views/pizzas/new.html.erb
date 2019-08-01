@@ -1,5 +1,10 @@
-<%= form_for @pizzatopping do |f| %>
-	<%= f.label :topping_id %>
-	<%= f.collection_check_boxes(:topping_id, @toppings, :id, :name)%>
-	<%= f.submit "Create Pizza! "%>
-<% end %>
+<div id="pizza_form">
+	<%= form_for @pizzatopping do |f| %>
+		<h1> <%= f.label :topping_id %> </h1>
+		<br>
+		<%= f.collection_check_boxes(:topping_id, @toppings, :id, :name)%>
+		<br>
+		<br>
+		<%= f.submit "Create Pizza! "%>
+	<% end %>
+</div>

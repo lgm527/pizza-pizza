@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  root '/'
+
   resources :toppings
   resources :pizzas
   resources :users
