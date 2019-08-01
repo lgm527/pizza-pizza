@@ -12,7 +12,17 @@ class PizzasController < ApplicationController
 
 		@pizza = Pizza.find(params[:id])
 		@pizzas_toppings = @pizza.toppings
-		byebug
+	end
+
+	def edit
+		@pizza = Pizza.find(params[:id])
+		@pizzas_toppings = @pizza.toppings.pluck(:id)
+		@toppings = Topping.all
+	end
+
+	def destroy
+		@pizza = Pizza.find(params[:id])
+		@pizza.destroy
 	end
 
 	private

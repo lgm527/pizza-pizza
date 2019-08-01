@@ -1,0 +1,11 @@
+<h1>Edit Pizza</h1>
+
+
+<%= form_tag("/pizza_toppings/update", method: :put) do %>
+	<%= hidden_field(:pizza_topping, :pizza_id, :value => @pizza.id) %>
+  <% @toppings.each do |t| %>
+  	<label for="pizzas_topping[topping_id][<%= t.id %>]"><%= t.name %></label>
+  	<%= check_box_tag name = "pizza_topping[topping_id][]", value = t.id , checked = @pizzas_toppings.include?(t.id) %>
+  <% end %>
+  <%= submit_tag("Search") %>
+<% end %>
