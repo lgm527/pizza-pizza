@@ -18,7 +18,7 @@ class LoginController < ApplicationController
 
   def destroy
     logout
-    redirect_to "/login"
+    redirect_to "/"
   end
 
 end

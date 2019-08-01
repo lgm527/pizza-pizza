@@ -1,13 +1,20 @@
-<h1>Registration</h1>
+<div id="register">
 
-<% if flash[:errors] %>
-  <ul>
-    <% flash[:errors].each do |err_message| %>
+  <h1>Registration</h1>
+
+  <div id="errors">
+  <% if flash[:errors] %>
+  <span>  <i>Please note,</i> your account could not be created because:  </span>
+    <ul>
+      <% flash[:errors].each do |err_message| %>
       <li>
-        <%= err_message %>
+          <%= err_message %>
       </li>
-    <% end %>
-  </ul>
-<% end %>
+      <% end %>
+    </ul>
+  <% end %>
+  </div>
+
+</div>
 
 <%= render 'form' %>

@@ -26,6 +26,10 @@ span {
    font-family: 'Pridi', serif;
  }
 
+ul {
+  list-style-type: circle;
+}
+
 #user_form, #login {
   background-color: white;
   margin-left: 30%;
@@ -33,6 +37,7 @@ span {
   text-align: center;
   padding: 6em;
   display: vertical;
+  border-radius: .5em;
 }
 
 #pizza_form {
@@ -64,4 +69,19 @@ span {
   padding: 1em;
   border-radius: .5em;
   background-color: white;
+}
+
+.go_home {
+  text-align: right;
+}
+
+#errors {
+  border-radius: .5em;
+  background-color: white;
+  margin: 1em;
+}
+
+#register {
+  display: flex;
+  justify-content: space-between;
 }
