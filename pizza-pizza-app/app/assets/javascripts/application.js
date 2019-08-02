@@ -14,3 +14,16 @@
 //= require activestorage
 //= require turbolinks
 //= require_tree .
+var toppings = document.querySelectorAll(".topping_name")
+var pie = document.querySelector(".pie")
+toppings.forEach((topping) => {
+	topping.addEventListener("click", function () {
+		let id = topping.getAttribute("for");
+		let topping_box = document.querySelector(`#${id}`);
+		if (topping_box.checked)
+			for (let i = 1; i <= 5; i ++)
+				pie.innerHTML +=`<div class=\"pepperoni-${i}\"></div>`;
+		else {}
+
+	})
+})

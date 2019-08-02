@@ -57,6 +57,46 @@ input[type=checkbox]:checked + .topping_name {
    background: #dedada;
 }
 
+/* Pizza styles */
+
+.pie {
+  background-color: yellow;
+  width: 25em;
+  height: 25em;
+  margin: 0 auto;
+  border-radius: 100%;
+  position: relative;
+  border: 2em solid orange
+}
+
+/* Topping styles */
+
+.pepperoni {
+  background-color: red;
+  width: 3em;
+  height: 3em;
+  border-radius: 100%;
+  position: absolute;
+}
+
+.onions {
+  width: 3em;
+  height: 3em;
+  border-radius: 50%;
+  box-shadow: 15px 10px 0 0 purple;
+  position: absolute;
+}
+
+.peppers {
+  width: 3em;
+  height: 3em;
+  border-radius: 50%;
+  box-shadow: 15px 10px 0 0 green;
+  position: absolute;
+}
+
+/* ID's */
+
 #user_form, #login {
   background-color: white;
   margin-left: 30%;

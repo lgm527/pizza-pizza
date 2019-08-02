@@ -9,7 +9,6 @@
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
 
     <link href="https://fonts.googleapis.com/css?family=Faster+One|Grand+Hotel|Pridi&display=swap" rel="stylesheet">
-
   </head>
 
 <header>
@@ -37,4 +36,33 @@
   <body>
     <%= yield %>
   </body>
+  <script type="text/javascript">
+    var toppings = document.querySelectorAll(".topping_name")
+    var pie = document.querySelector(".pie")
+    toppings.forEach((topping) => {
+      topping.addEventListener("click", function () {
+        let id = topping.getAttribute("for");
+        let topping_name = topping.innerText;
+        let topping_box = document.querySelector(`#${id}`);
+        if (!topping_box.checked) {
+          prev_left = 0;
+          prev_top = 0;
+          for (let i = 1; i <= 5; i ++) { 
+            var seed = Math.round(Math.random() * 100)/100
+            var left = seed * 18
+            var top = seed * 18
+            var rotate = Math.round(seed * 360)
+            pie.innerHTML +=`<div class=\"${topping_name.toLowerCase()}\" style=\"top:${top}em;left:${left}em;transform: rotate(${rotate}deg);\"></div>`;
+          }
+        }
+        else {
+          let tops_to_rem = document.querySelectorAll(`[class^=${topping_name.toLowerCase()}`);
+          tops_to_rem.forEach((top) => {
+            top.remove()
+          });
+        }
+
+      })
+    })
+  </script>
 </html>
