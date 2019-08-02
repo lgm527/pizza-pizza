@@ -83,6 +83,7 @@ input[type=checkbox]:checked + .topping_name {
 }
 
 #user_info {
+  margin-bottom: 2em;
   margin-left: 2em;
   margin-top: 2em;
   padding: 1em;
@@ -112,4 +113,8 @@ input[type=checkbox]:checked + .topping_name {
 #register {
   display: flex;
   justify-content: space-between;
+}
+
+#p_p {
+  font-size: 10em;
 }
