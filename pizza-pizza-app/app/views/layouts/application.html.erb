@@ -37,6 +37,14 @@
     <%= yield %>
   </body>
   <script type="text/javascript">
+
+    var dist = function (x1, y1, x2, y2) {
+      let deltaX = Math.abs(x2 - x1)
+      let deltaY = Math.abs(y2 - y1)
+      let distancesquared = Math.pow(deltaX, 2) + Math.pow(deltaY, 2)
+      return Math.floor(Math.sqrt(distancesquared))
+    }
+
     var toppings = document.querySelectorAll(".topping_name")
     var pie = document.querySelector(".pie")
     toppings.forEach((topping) => {
@@ -47,11 +55,17 @@
         if (!topping_box.checked) {
           prev_left = 0;
           prev_top = 0;
-          for (let i = 1; i <= 5; i ++) { 
-            var seed = Math.round(Math.random() * 100)/100
+          for (let i = 1; i <= 20; i ++) { 
+            var seed = Math.floor(Math.random() * 100)/100
             var left = seed * 18
             var top = seed * 18
-            var rotate = Math.round(seed * 360)
+            if (dist(left, top, prev_left, prev_top) < 10) {
+              if (Math.floor(Math.random() * 2))
+                left = left < 14 ? left + 5 : left - 5
+              else
+                top = top < 10 ? top + 10 : top - 10
+            }
+            var rotate = Math.floor(seed * 360)
             pie.innerHTML +=`<div class=\"${topping_name.toLowerCase()}\" style=\"top:${top}em;left:${left}em;transform: rotate(${rotate}deg);\"></div>`;
           }
         }
